@@ -11,6 +11,8 @@ namespace CA1_College
     {
         public int StudentNumber { get; set; }
 
+        AddData add = new AddData();
+
         public Student(string name, string address, string county, int age, string email, string phone, string gender, string course, string module, int studentNumber)
         {
             Name = name;
@@ -27,7 +29,7 @@ namespace CA1_College
 
         public override void AddPerson()
         {
-            throw new NotImplementedException();
+            add.AddNewStudent(this);
         }
     }
 }

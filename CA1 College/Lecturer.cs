@@ -8,9 +8,11 @@ namespace CA1_College
 {
     public class Lecturer : Person
     {
-        public double Pay { get; set; }
+        public decimal Pay { get; set; }
 
-        public Lecturer(string name, string address, string county, int age, string email, string phone, string gender, string course, string module, double pay)
+        AddData add = new AddData();
+
+        public Lecturer(string name, string address, string county, int age, string email, string phone, string gender, string course, string module, decimal pay)
         {
             Name = name;
             Address = address;
@@ -26,7 +28,7 @@ namespace CA1_College
 
         public override void AddPerson()
         {
-            throw new NotImplementedException();
+            add.AddNewLecturer(this);
         }
     }
 }

@@ -19,13 +19,13 @@ namespace CA1_College
 
         private void btnNewLecturers_Click(object sender, EventArgs e)
         {
-            Lecturers lec = new Lecturers();
+            NewLecturers lec = new NewLecturers();
             lec.ShowDialog();
         }
 
         private void btnNewStudents_Click(object sender, EventArgs e)
         {
-            Students st = new Students();
+            NewStudents st = new NewStudents();
             st.ShowDialog();
         }
 

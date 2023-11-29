@@ -1,6 +1,6 @@
 ﻿namespace CA1_College
 {
-    partial class Students
+    partial class NewStudents
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.GBNewStudent = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAgeDisplay = new System.Windows.Forms.Label();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.cboModule = new System.Windows.Forms.ComboBox();
@@ -53,8 +55,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.GBNewStudent.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +93,22 @@
             this.GBNewStudent.TabStop = false;
             this.GBNewStudent.Text = "New Student";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(32, 128);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 16);
+            this.label11.TabIndex = 48;
+            this.label11.Text = "Address";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(169, 128);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(151, 22);
+            this.txtAddress.TabIndex = 47;
+            // 
             // lblAgeDisplay
             // 
             this.lblAgeDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -107,6 +123,7 @@
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(151, 22);
             this.dtpDOB.TabIndex = 45;
+            this.dtpDOB.ValueChanged += new System.EventHandler(this.dtpDOB_ValueChanged);
             // 
             // cboModule
             // 
@@ -300,29 +317,13 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Firstname";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(32, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 16);
-            this.label11.TabIndex = 48;
-            this.label11.Text = "Address";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(169, 128);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(151, 22);
-            this.txtAddress.TabIndex = 47;
-            // 
-            // Students
+            // NewStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 654);
             this.Controls.Add(this.GBNewStudent);
-            this.Name = "Students";
+            this.Name = "NewStudents";
             this.Text = "Students";
             this.Load += new System.EventHandler(this.Students_Load);
             this.GBNewStudent.ResumeLayout(false);

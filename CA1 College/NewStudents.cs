@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CA1_College
 {
-    public partial class Students : Form
+    public partial class NewStudents : Form
     {
-        public Students()
+        public NewStudents()
         {
             InitializeComponent();
         }
@@ -54,6 +54,27 @@ namespace CA1_College
             int studentNumber = int.Parse(txtStuNo.Text);
 
             student = new Student(name, address, county, age, email, phoneNo, ge, course, module, studentNumber);
+            student.AddPerson();
+
+            MessageBox.Show("Data Added", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            txtFn.Clear();
+            txtSn.Clear();
+            txtAddress.Clear();
+            txtEmail.Clear();
+            txtPhoneNo.Clear();
+            txtStuNo.Clear();
+        }
+
+        private void dtpDOB_ValueChanged(object sender, EventArgs e)
+        {
+            //Current Year - Birth Year
+            int age = DateTime.Today.Year - dtpDOB.Value.Year;
+
+            if (DateTime.Today.Month < dtpDOB.Value.Month) age--;
+            else if ((DateTime.Today.Month >= dtpDOB.Value.Month) && (DateTime.Today.Day < dtpDOB.Value.Day)) age--;
+
+            lblAgeDisplay.Text = age.ToString();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace CA1_College
 {
-    partial class Lecturers
+    partial class NewLecturers
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.GBNewLecturer = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAgeDisplay = new System.Windows.Forms.Label();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.GBNewLecturer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +93,22 @@
             this.GBNewLecturer.TabStop = false;
             this.GBNewLecturer.Text = "New Lecturer";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(32, 125);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 16);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "Address";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(169, 125);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(151, 22);
+            this.txtAddress.TabIndex = 50;
+            // 
             // lblAgeDisplay
             // 
             this.lblAgeDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -107,6 +123,7 @@
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(151, 22);
             this.dtpDOB.TabIndex = 48;
+            this.dtpDOB.ValueChanged += new System.EventHandler(this.dtpDOB_ValueChanged);
             // 
             // label7
             // 
@@ -300,29 +317,13 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Firstname";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(32, 125);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 16);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "Address";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(169, 125);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(151, 22);
-            this.txtAddress.TabIndex = 50;
-            // 
-            // Lecturers
+            // NewLecturers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 666);
             this.Controls.Add(this.GBNewLecturer);
-            this.Name = "Lecturers";
+            this.Name = "NewLecturers";
             this.Text = "Lecturers";
             this.Load += new System.EventHandler(this.Lecturers_Load);
             this.GBNewLecturer.ResumeLayout(false);

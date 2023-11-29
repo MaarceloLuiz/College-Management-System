@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace CA1_College
 {
-    public partial class Lecturers : Form
+    public partial class NewLecturers : Form
     {
-        public Lecturers()
+        public NewLecturers()
         {
             InitializeComponent();
         }
@@ -52,9 +52,30 @@ namespace CA1_College
 
             string course = cboCourse.SelectedItem.ToString();
             string module = cboModule.SelectedItem.ToString();
-            double pay = double.Parse(txtPay.Text);
+            decimal pay = decimal.Parse(txtPay.Text);
 
             lecturer = new Lecturer(name, address, county, age, email, phoneNo, ge, course, module, pay);
+            lecturer.AddPerson();
+
+            MessageBox.Show("Data Added", "Add Lecturer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            txtFn.Clear();
+            txtSn.Clear();
+            txtAddress.Clear();
+            txtEmail.Clear();
+            txtPhoneNo.Clear();
+            txtPay.Clear();
+        }
+
+        private void dtpDOB_ValueChanged(object sender, EventArgs e)
+        {
+            //Current Year - Birth Year
+            int age = DateTime.Today.Year - dtpDOB.Value.Year;
+
+            if (DateTime.Today.Month < dtpDOB.Value.Month) age--;
+            else if ((DateTime.Today.Month >= dtpDOB.Value.Month) && (DateTime.Today.Day < dtpDOB.Value.Day)) age--;
+
+            lblAgeDisplay.Text = age.ToString();
         }
     }
 }
