@@ -132,6 +132,7 @@
             this.cboCourse.Name = "cboCourse";
             this.cboCourse.Size = new System.Drawing.Size(151, 24);
             this.cboCourse.TabIndex = 42;
+            this.cboCourse.SelectedIndexChanged += new System.EventHandler(this.cboCourse_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -198,6 +199,7 @@
             this.btnClose.TabIndex = 34;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label7
             // 
@@ -216,6 +218,7 @@
             this.btnAddStudent.TabIndex = 30;
             this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // rbFemale
             // 
@@ -321,6 +324,7 @@
             this.Controls.Add(this.GBNewStudent);
             this.Name = "Students";
             this.Text = "Students";
+            this.Load += new System.EventHandler(this.Students_Load);
             this.GBNewStudent.ResumeLayout(false);
             this.GBNewStudent.PerformLayout();
             this.ResumeLayout(false);

@@ -34,5 +34,10 @@ namespace CA1_College
             DataView dv = new DataView();
             dv.ShowDialog();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

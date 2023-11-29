@@ -141,6 +141,7 @@
             this.cboCourse.Name = "cboCourse";
             this.cboCourse.Size = new System.Drawing.Size(151, 24);
             this.cboCourse.TabIndex = 44;
+            this.cboCourse.SelectedIndexChanged += new System.EventHandler(this.cboCourse_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -207,6 +208,7 @@
             this.btnClose.TabIndex = 34;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAddLecturer
             // 
@@ -216,6 +218,7 @@
             this.btnAddLecturer.TabIndex = 30;
             this.btnAddLecturer.Text = "Add Lecturer";
             this.btnAddLecturer.UseVisualStyleBackColor = true;
+            this.btnAddLecturer.Click += new System.EventHandler(this.btnAddLecturer_Click);
             // 
             // rbFemale
             // 
@@ -321,6 +324,7 @@
             this.Controls.Add(this.GBNewLecturer);
             this.Name = "Lecturers";
             this.Text = "Lecturers";
+            this.Load += new System.EventHandler(this.Lecturers_Load);
             this.GBNewLecturer.ResumeLayout(false);
             this.GBNewLecturer.PerformLayout();
             this.ResumeLayout(false);
