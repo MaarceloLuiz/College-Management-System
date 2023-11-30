@@ -112,8 +112,6 @@
             this.cboShowCourse.Name = "cboShowCourse";
             this.cboShowCourse.Size = new System.Drawing.Size(172, 24);
             this.cboShowCourse.TabIndex = 51;
-            this.cboShowCourse.SelectedIndexChanged += new System.EventHandler(this.cboShowCourse_SelectedIndexChanged);
-            // 
             // btnShowCourse
             // 
             this.btnShowCourse.Location = new System.Drawing.Point(601, 131);

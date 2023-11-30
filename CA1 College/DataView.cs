@@ -72,13 +72,6 @@ namespace CA1_College
             dao.CloseCon();
         }
 
-        private void cboShowCourse_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (cboShowCourse.SelectedIndex.Equals(0)) cboShowModule.DataSource = Enum.GetValues(typeof(ModuleCS));
-            //if (cboShowCourse.SelectedIndex.Equals(1)) cboShowModule.DataSource = Enum.GetValues(typeof(ModulePSY));
-            //if (cboShowCourse.SelectedIndex.Equals(2)) cboShowModule.DataSource = Enum.GetValues(typeof(ModuleHis));
-        }
-
         private void btnShowAllLecturers_Click(object sender, EventArgs e)
         {
             string proc = "ProcGetAllLecturer";
