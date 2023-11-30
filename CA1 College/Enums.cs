@@ -71,6 +71,19 @@ namespace CA1_College
         Polictics
     };
 
+    enum AllModules
+    {
+        WebDevelopment,
+        OOP,
+        Mathematics,
+        DevelopmentalPsychology,
+        SocialPsychology,
+        PsychologicalFoundations,
+        GlobalHistory,
+        AmericanHistory,
+        Polictics
+    }
+
     enum Gender
     {
         Male,

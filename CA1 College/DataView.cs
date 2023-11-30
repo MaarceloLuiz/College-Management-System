@@ -35,6 +35,7 @@ namespace CA1_College
             cboShowGender.DataSource = Enum.GetValues(typeof(Gender));
             cboShowCourse.DataSource = Enum.GetValues(typeof(Course));
             cboShowGender.DataSource = Enum.GetValues(typeof(Gender));
+            cboShowModule.DataSource = Enum.GetValues(typeof(AllModules));
         }
 
         void LoadData(string proc, DataGridView dgv)
@@ -73,9 +74,9 @@ namespace CA1_College
 
         private void cboShowCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboShowCourse.SelectedIndex.Equals(0)) cboShowModule.DataSource = Enum.GetValues(typeof(ModuleCS));
-            if (cboShowCourse.SelectedIndex.Equals(1)) cboShowModule.DataSource = Enum.GetValues(typeof(ModulePSY));
-            if (cboShowCourse.SelectedIndex.Equals(2)) cboShowModule.DataSource = Enum.GetValues(typeof(ModuleHis));
+            //if (cboShowCourse.SelectedIndex.Equals(0)) cboShowModule.DataSource = Enum.GetValues(typeof(ModuleCS));
+            //if (cboShowCourse.SelectedIndex.Equals(1)) cboShowModule.DataSource = Enum.GetValues(typeof(ModulePSY));
+            //if (cboShowCourse.SelectedIndex.Equals(2)) cboShowModule.DataSource = Enum.GetValues(typeof(ModuleHis));
         }
 
         private void btnShowAllLecturers_Click(object sender, EventArgs e)
@@ -108,6 +109,24 @@ namespace CA1_College
             string gen = cboShowGender.SelectedItem.ToString();
 
             LoadDataWithParam(proc, DGVLec, param, gen);
+        }
+
+        private void btnShowCourse_Click(object sender, EventArgs e)
+        {
+            string proc = "ProcCourseStu";
+            string param = "@course";
+            string course = cboShowCourse.SelectedItem.ToString();
+
+            LoadDataWithParam(proc, DGVStu, param, course);
+        }
+
+        private void btnShowModule_Click(object sender, EventArgs e)
+        {
+            string proc = "ProcModuleLec";
+            string param = "@courseModule";
+            string module = cboShowModule.SelectedItem.ToString();
+
+            LoadDataWithParam(proc, DGVLec, param, module);
         }
     }
 }

@@ -108,7 +108,7 @@
             // cboShowCourse
             // 
             this.cboShowCourse.FormattingEnabled = true;
-            this.cboShowCourse.Location = new System.Drawing.Point(776, 89);
+            this.cboShowCourse.Location = new System.Drawing.Point(776, 146);
             this.cboShowCourse.Name = "cboShowCourse";
             this.cboShowCourse.Size = new System.Drawing.Size(172, 24);
             this.cboShowCourse.TabIndex = 51;
@@ -116,29 +116,31 @@
             // 
             // btnShowCourse
             // 
-            this.btnShowCourse.Location = new System.Drawing.Point(601, 74);
+            this.btnShowCourse.Location = new System.Drawing.Point(601, 131);
             this.btnShowCourse.Name = "btnShowCourse";
             this.btnShowCourse.Size = new System.Drawing.Size(158, 52);
             this.btnShowCourse.TabIndex = 50;
-            this.btnShowCourse.Text = "Show Lecturers Course";
+            this.btnShowCourse.Text = "Show Students Course";
             this.btnShowCourse.UseVisualStyleBackColor = true;
+            this.btnShowCourse.Click += new System.EventHandler(this.btnShowCourse_Click);
             // 
             // cboShowModule
             // 
             this.cboShowModule.FormattingEnabled = true;
-            this.cboShowModule.Location = new System.Drawing.Point(776, 147);
+            this.cboShowModule.Location = new System.Drawing.Point(776, 88);
             this.cboShowModule.Name = "cboShowModule";
             this.cboShowModule.Size = new System.Drawing.Size(172, 24);
             this.cboShowModule.TabIndex = 49;
             // 
             // btnShowModule
             // 
-            this.btnShowModule.Location = new System.Drawing.Point(601, 132);
+            this.btnShowModule.Location = new System.Drawing.Point(601, 73);
             this.btnShowModule.Name = "btnShowModule";
             this.btnShowModule.Size = new System.Drawing.Size(158, 52);
             this.btnShowModule.TabIndex = 48;
-            this.btnShowModule.Text = "Show Students Module";
+            this.btnShowModule.Text = "Show Lecturers Module";
             this.btnShowModule.UseVisualStyleBackColor = true;
+            this.btnShowModule.Click += new System.EventHandler(this.btnShowModule_Click);
             // 
             // txtShowAge
             // 
