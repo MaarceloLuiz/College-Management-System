@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CA1_College
 {
@@ -25,14 +26,18 @@ namespace CA1_College
 
         private void DataView_Load(object sender, EventArgs e)
         {
-            string proc = "ProcGetAll";
-            LoadData(proc);
+            string proc = "ProcGetAllStudent";
+            LoadData(proc, DGVStu);
+
+            string proc2 = "ProcGetAllLecturer";
+            LoadData(proc2, DGVLec);
 
             cboShowGender.DataSource = Enum.GetValues(typeof(Gender));
             cboShowCourse.DataSource = Enum.GetValues(typeof(Course));
+            cboShowGender.DataSource = Enum.GetValues(typeof(Gender));
         }
 
-        void LoadData(string proc)
+        void LoadData(string proc, DataGridView dgv)
         {
             da = new SqlDataAdapter();
             dt = new DataTable();
@@ -43,7 +48,25 @@ namespace CA1_College
 
             da.SelectCommand = cmd;
             da.Fill(dt);
-            DGVCollege.DataSource = dt;
+            dgv.DataSource = dt;
+
+            dao.CloseCon();
+        }
+
+        void LoadDataWithParam(string proc, DataGridView dgv, string paramether, object value)
+        {
+            da = new SqlDataAdapter();
+            dt = new DataTable();
+
+            SqlCommand cmd = dao.OpenCon().CreateCommand();
+            cmd.CommandText = proc;
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue(paramether, value);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            dgv.DataSource = dt;
 
             dao.CloseCon();
         }
@@ -58,13 +81,33 @@ namespace CA1_College
         private void btnShowAllLecturers_Click(object sender, EventArgs e)
         {
             string proc = "ProcGetAllLecturer";
-            LoadData(proc);
+            LoadData(proc, DGVLec);
         }
 
         private void btnShowAllStudents_Click(object sender, EventArgs e)
         {
             string proc = "ProcGetAllStudent";
-            LoadData(proc);
+            LoadData(proc, DGVStu);
+        }
+
+        private void btnShowAbove_Click(object sender, EventArgs e)
+        {
+            //showing all students above the Age we choose
+            string proc = "ProcAllAboveStu";
+            string param = "@age";
+            int age = int.Parse(txtShowAge.Text);
+
+            LoadDataWithParam(proc, DGVStu, param, age);
+        }
+
+        private void btnShowGender_Click(object sender, EventArgs e)
+        {
+            //showing all lecturers from this gender
+            string proc = "ProcGenderLec";
+            string param = "@gender";
+            string gen = cboShowGender.SelectedItem.ToString();
+
+            LoadDataWithParam(proc, DGVLec, param, gen);
         }
     }
 }
