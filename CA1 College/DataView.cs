@@ -87,11 +87,18 @@ namespace CA1_College
         private void btnShowAbove_Click(object sender, EventArgs e)
         {
             //showing all students above the Age we choose
-            string proc = "ProcAllAboveStu";
-            string param = "@age";
-            int age = int.Parse(txtShowAge.Text);
+            try
+            {
+                string proc = "ProcAllAboveStu";
+                string param = "@age";
+                int age = int.Parse(txtShowAge.Text);
 
-            LoadDataWithParam(proc, DGVStu, param, age);
+                LoadDataWithParam(proc, DGVStu, param, age);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnShowGender_Click(object sender, EventArgs e)

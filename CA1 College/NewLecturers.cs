@@ -40,31 +40,38 @@ namespace CA1_College
 
         private void btnAddLecturer_Click(object sender, EventArgs e)
         {
-            string name = txtFn.Text + " " + txtSn.Text;
-            string address = txtAddress.Text;
-            int age = int.Parse(lblAgeDisplay.Text);
-            string county = cboCounty.SelectedItem.ToString();
-            string email = txtEmail.Text;
-            string phoneNo = txtPhoneNo.Text;
+            try
+            {
+                string name = txtFn.Text + " " + txtSn.Text;
+                string address = txtAddress.Text;
+                int age = int.Parse(lblAgeDisplay.Text);
+                string county = cboCounty.SelectedItem.ToString();
+                string email = txtEmail.Text;
+                string phoneNo = txtPhoneNo.Text;
 
-            string ge = "Male";
-            if (rbFemale.Checked) ge = "Female";
+                string ge = "Male";
+                if (rbFemale.Checked) ge = "Female";
 
-            string course = cboCourse.SelectedItem.ToString();
-            string module = cboModule.SelectedItem.ToString();
-            decimal pay = decimal.Parse(txtPay.Text);
+                string course = cboCourse.SelectedItem.ToString();
+                string module = cboModule.SelectedItem.ToString();
+                decimal pay = decimal.Parse(txtPay.Text);
 
-            lecturer = new Lecturer(name, address, county, age, email, phoneNo, ge, course, module, pay);
-            lecturer.AddPerson();
+                lecturer = new Lecturer(name, address, county, age, email, phoneNo, ge, course, module, pay);
+                lecturer.AddPerson();
 
-            MessageBox.Show("Data Added", "Add Lecturer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Data Added", "Add Lecturer", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            txtFn.Clear();
-            txtSn.Clear();
-            txtAddress.Clear();
-            txtEmail.Clear();
-            txtPhoneNo.Clear();
-            txtPay.Clear();
+                txtFn.Clear();
+                txtSn.Clear();
+                txtAddress.Clear();
+                txtEmail.Clear();
+                txtPhoneNo.Clear();
+                txtPay.Clear();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dtpDOB_ValueChanged(object sender, EventArgs e)
